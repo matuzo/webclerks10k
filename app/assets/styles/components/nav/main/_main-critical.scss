@@ -1,0 +1,119 @@
+.nav__main {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 8000;
+
+  width: 100%;
+  height: $navHeight;
+  
+  background: $secondary-dark;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 1.1rem;
+  text-align: center;
+
+  overflow: hidden;
+
+  @media only screen {
+    overflow: visible;
+
+    .no-svg & {
+      overflow: hidden;
+    }
+  }
+
+  @include mq($from: large) {
+    left: 4.4rem;
+    padding-left: 3rem;
+    text-align: left;
+
+    @include when-nojs {    
+      height: auto;
+      bottom: auto;
+      border-top: none;
+      background: none;
+      font-size: 1.3rem;
+      max-width: 50rem;
+
+      width: 44%;
+      right: auto;
+      top: 3.5rem;
+    }
+  //   z-index: 5300;
+  }
+
+  @include mq($from: larger) {
+    @include when-nojs {    
+      font-size: 1.6rem;
+    }
+  }
+
+  // @include when-js {
+    text-transform: uppercase;
+
+  //   @include mq($from: large) {
+  //     right: auto;
+
+  //     @include hide-in-sidebar(0,0);
+
+   
+  //   }
+  // }
+  
+  // margin: auto;
+  // padding-bottom: 20px;
+  // padding-bottom: 0rem;
+
+  &__items {
+  //   background-color: $secondary-dark;
+    @include list-reset;
+    display: block;
+    display: -webkit-box; 
+    display: -webkit-flex;
+    display: flex;
+    height: 100%;
+
+    @include mq($from: large) {
+      @include when-js {    
+        display: block;
+     }
+    }
+  }
+
+  &__item {
+    margin: 0 0.4rem;
+
+    .no-svg & {
+      margin: 0;
+    }
+
+    @include mq($until: large) {    
+      flex-basis: 20%;
+      padding-top: 15px;
+    }
+    
+    @include when-nojs {
+      float: left;
+      width: 20%;
+      // margin-top: 0rem;
+    
+      @include mq($from: large) {    
+        margin:0 10px 0 0;
+        width: auto;
+
+      }
+    }
+  }
+
+  &__link {
+
+    &:link,
+    &:visited {
+      color: #fff;
+    }
+  } 
+
+  .no-svg & {
+    position: static;
+  }
+}

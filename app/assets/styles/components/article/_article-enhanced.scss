@@ -1,0 +1,121 @@
+.art {  
+  padding: 0.8rem 1.5rem;
+  position: relative;
+  border-width: 0rem;
+  border-radius: 2px;
+  margin: 0rem;
+
+  &--sponsored {
+    padding-top: 3.4rem;
+  }
+
+  // &:first-of-type,
+  &:hover {
+    background: $secondary-lighter;
+  }
+
+  &__imgct {
+    margin-left: 1rem;
+    background: #ccc;
+    border-radius: 4px;
+    overflow:hidden;
+
+    @include mq($from: large) {
+      width: $imageContainerWidthLarge;
+      height: $imageContainerHeightLarge;      
+    }
+
+    &--webclerks {
+      opacity: 0.1;
+      padding: 0.6rem; 
+      border: 1px solid #000;
+      border-radius: 4px;
+    }
+
+    @include when-inside('.art--sponsored') {
+      margin-top: -1.5rem;
+    }
+
+    .no-js & {
+      display: none;
+    }
+  }
+
+  &__img {
+    img {
+      display: block;
+    }
+  }
+
+  &__hl {
+    font-size: 1.4rem;
+    color: $secondary-gray;
+    line-height: 1.4;
+
+    @include mq($from: small) {
+      font-size: 1.8rem;
+    }
+
+    @include mq($from: large) {
+      font-size: 1.8rem;
+    }
+  }
+
+
+  &__meta {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1;
+    font-style: italic;
+
+    @include mq($from: small) {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__sponsored {
+    position: absolute;
+    top: 1.3rem;
+    left: 1.5rem;
+    margin: 0;
+    font-size: 1rem;
+    color: $secondary-gray-lighter;
+
+    .no-svg & {
+      position: static;
+    }
+
+    &:before {
+      content: "» ";
+      display: inline-block;
+    }
+
+    @include mq($from: small) {
+      font-size: 1.1rem;
+    }
+  }
+
+  @include mq($from: wide) {
+    padding: 1.6rem 2.5rem;
+
+    &--sponsored {
+      padding-top: 2.4rem;
+    }
+
+    &__hl {
+      font-size: 2.4rem;
+      @include semibold;
+    }
+
+    &__meta {
+      font-size: 1.4rem;
+    }
+
+    &__sponsored {
+      font-size: 1.2rem;
+      left: 2.5rem;
+      top: 1rem;
+      @include semibold;
+    }
+  }
+}

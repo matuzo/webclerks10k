@@ -1,0 +1,24 @@
+.btn {
+  display: inline-block;
+  padding: 0;
+  color: $secondary-dark;
+  border: 0;
+  text-decoration: none;
+  text-align: center;
+  background: none;
+  font-size: 1.6rem;
+
+  &__close-offcanvas,
+  &__toggle-offcanvas {  
+    height: 44px;
+    width: 44px;
+    position: absolute;
+    top: 2rem;
+    left: 3rem;
+    z-index: 50000;
+  }
+
+  &__close-offcanvas {
+    display: none;
+  }
+}

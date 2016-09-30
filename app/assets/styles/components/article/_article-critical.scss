@@ -1,0 +1,27 @@
+.art {
+  border-bottom: 1px solid $secondary-darker;
+  margin: 15px;
+  padding-bottom: 10px;
+
+  &__imgct {
+    width: $imageContainerWidth;
+    height: $imageContainerHeight;
+    float: right;
+  }
+
+  &__hl {
+    margin: 5px 0 2px;
+    margin: 0 0 0.2rem;
+  }
+
+  &__link {
+    display: block;
+    @include clearfix;
+
+    &:link,
+    &:visited {
+      color: $secondary-gray-lighter;
+      text-decoration: none;
+    }
+  }
+}

@@ -1,0 +1,104 @@
+%svg-common {
+	background: url("../images/sprite.svg") no-repeat;
+}
+
+.svg-burger {
+	@extend %svg-common;
+	background-position: 0 0;
+}
+
+.svg-burger-dims {
+	width: 64px;
+	height: 64px;
+}
+
+.svg-close {
+	@extend %svg-common;
+	background-position: 11.11111111111111% 0;
+}
+
+.svg-close-dims {
+	width: 64px;
+	height: 64px;
+}
+
+.svg-events {
+	@extend %svg-common;
+	background-position: 22.22222222222222% 0;
+}
+
+.svg-events-dims {
+	width: 64px;
+	height: 64px;
+}
+
+.svg-facebook {
+	@extend %svg-common;
+	background-position: 33.333333333333336% 0;
+}
+
+.svg-facebook-dims {
+	width: 64px;
+	height: 64px;
+}
+
+.svg-kontakt {
+	@extend %svg-common;
+	background-position: 44.44444444444444% 0;
+}
+
+.svg-kontakt-dims {
+	width: 64px;
+	height: 64px;
+}
+
+.svg-mail {
+	@extend %svg-common;
+	background-position: 55.55555555555556% 0;
+}
+
+.svg-mail-dims {
+	width: 64px;
+	height: 64px;
+}
+
+.svg-meetup {
+	@extend %svg-common;
+	background-position: 66.66666666666667% 0;
+}
+
+.svg-meetup-dims {
+	width: 64px;
+	height: 64px;
+}
+
+.svg-news {
+	@extend %svg-common;
+	background-position: 77.77777777777777% 0;
+}
+
+.svg-news-dims {
+	width: 64px;
+	height: 64px;
+}
+
+.svg-twitter {
+	@extend %svg-common;
+	background-position: 88.88888888888889% 0;
+}
+
+.svg-twitter-dims {
+	width: 64px;
+	height: 64px;
+}
+
+.svg-webclerks {
+	@extend %svg-common;
+	background-position: 100% 0;
+}
+
+.svg-webclerks-dims {
+	width: 64px;
+	height: 64px;
+}
+

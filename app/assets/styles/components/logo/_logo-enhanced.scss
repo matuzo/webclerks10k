@@ -1,0 +1,26 @@
+.logo {  
+
+  @include mq($from: large) {    
+    &:not(&--clone) {
+      fill: $brand-color-pink;
+    }
+  }
+
+  @include mq($from: xlarge) {
+    width: $headerLogoWidth * 1.4;
+    height: $headerLogoHeight  * 1.4;
+    left: 4.5rem;
+  }
+
+  @include mq($from: larger) {
+    width: $headerLogoWidth * 1.2;
+    height: $headerLogoHeight  * 1.2;
+  }
+
+  @include mq($from: xlarge) {
+    &--clone {
+      left: 4.5rem;
+      bottom: ($cardInfoSpaceBig * -1) + 3rem;
+    }
+  }
+}

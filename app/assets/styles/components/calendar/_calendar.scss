@@ -1,0 +1,22 @@
+.cal {
+  &__change-month {
+    &--current {
+      font-size: 1.7rem;
+      padding: 0 1.5rem;
+    }
+
+    &__icon {
+      &--ia {
+        opacity: 0.5;
+      }
+
+      path {
+        fill: $secondary-gray-lighter;
+      }
+    }
+  }
+
+  &__event {
+    display: block;
+  }
+}

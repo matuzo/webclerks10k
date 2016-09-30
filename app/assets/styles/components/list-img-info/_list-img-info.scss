@@ -1,0 +1,26 @@
+.list-img-info__subhl{
+  font-size:  2rem;
+//   display: inline-block;
+//   @include extrabold;
+//   @include smart-underline(#fff, red, red, 86%);
+//   color: $secondary-gray;
+}
+
+.list-img-info {
+
+  @include mq($from: large) {
+    display: flex;
+  }
+  
+  @include list-reset;
+
+  &__item {
+    flex-basis: 33.3%;
+    padding: 0 1rem;
+
+    &__talk {
+      font-size: 1.6rem;
+      margin: 1rem 0 .5rem 0;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "require": {
+    "j7mbo/twitter-api-php": "dev-master",
+    "guzzlehttp/guzzle": "6.2.1",
+    "philo/laravel-blade": "3.*",
+    "abeautifulsite/simpleimage" : "*",
+    "dms/meetup-api-client": "^2.2"
+  }
+}

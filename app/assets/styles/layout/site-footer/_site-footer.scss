@@ -1,0 +1,24 @@
+.site__footer {
+  padding: 15px;
+  padding: 1.5rem 1.5rem 1.5rem 3rem;
+  margin-bottom: $navHeight;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50vw;
+  z-index: 8000;
+
+  // text-align: right;
+  color: $content-background;
+
+  @include mq($from: large) {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  a:link,
+  a:visited {
+    color: rgb(255, 255, 255);
+  }
+}

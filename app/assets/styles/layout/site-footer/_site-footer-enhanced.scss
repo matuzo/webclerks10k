@@ -1,0 +1,37 @@
+.site__footer {
+
+  @include mq($from: large) {
+    @include hide-in-sidebar(auto, 0);
+  }
+
+  &__row {
+    margin: 0 0.5rem 0 0;
+    display: inline-block;
+    overflow: visible;
+  }
+
+  &__link {
+    display: block;
+    line-height: 1;
+    opacity: 0.6;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  @include mq($from: large) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-bottom: 3rem;
+    background: none;
+    padding: 0 2rem 0 0;
+
+    &__row:first-child {
+      flex-basis: 100%;
+      text-align: right;
+    }
+  }
+
+}

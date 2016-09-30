@@ -1,0 +1,51 @@
+.site__header {
+  width: 100%;
+  padding: 1rem 1.3rem;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 5500;
+  z-index: 7100;
+
+  .no-svg & {
+    position: static;
+    padding: 0 !important;
+  }
+
+  background: $brand-color-green;
+  
+  &--open {
+    background: $secondary-dark !important;
+  }
+  
+  // &__inner {
+  //   display: flex;
+  //   justify-content: space-between;
+  // }
+
+
+
+  @include mq($from: large) {
+    z-index: 5000;
+    background: $secondary-dark;
+
+    height: $headerHeight;
+
+    @include when-nojs {
+      height: $headerHeight + 0.3rem;
+
+      @include mq($from: large) {
+        height: $headerHeight + 0.5rem;
+      }
+    }
+
+    $margin: 3rem;
+    padding-left: $headerLogoWidth + $margin;
+  }
+
+  .js & {
+    @include mq($from: large) {
+      height: 100%;
+    }
+  }
+}

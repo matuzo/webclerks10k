@@ -1,0 +1,76 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+/**
+ * Set up a decent box model on the root element
+ */
+html {
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.6;
+  margin: 0;
+
+  color: $secondary-dark;
+  font: normal 125% / 1.6 $text-font-stack-basic;
+}
+
+/**
+ * Add the correct display in IE 9-.
+ */
+
+main,
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*, *::before, *::after {
+  box-sizing: inherit;
+} 
+
+/**
+ * Basic styles for links
+ */
+a {
+  color: $brand-color-pink-dark;
+  text-decoration: underline;
+  transition: color 0.3s linear;
+
+  @include on-event {
+    color: $secondary-dark;
+  }
+}
+
+img {
+  max-width: 100%
+}
+
+p {
+  margin: 0 0 10px;
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+}
+
+h2 {
+  margin-bottom: 0;
+}
+
+:focus {
+  outline: 4px solid $brand-color-pink;  
+}

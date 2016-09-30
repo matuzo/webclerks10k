@@ -1,0 +1,336 @@
+.ft {
+  &:after {
+    position: absolute;
+    bottom: $cardInfoPosition;
+    left: 1.3rem;
+    text-transform: uppercase;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    color: $brand-color-green-shadow;
+
+    @include extrabold;
+
+
+    @include mq($from: large) {
+      left: auto;
+      bottom: ($cardInfoSpaceBig * -1) + 1.5rem;
+      right: 2rem;
+    }
+    
+    @include mq($from: larger) {
+      right: 4rem;
+    }
+
+    @include mq($from: xlarge) {
+      font-size: 2.5rem;
+    }
+
+    @include mq($from: wide) {
+      font-size: 3.5rem;
+    }
+
+    .jobs & {
+      content: "News » Jobs"; // :(
+    }
+
+    .projects & {
+      content: "News » Projects"; // :(
+    }
+
+    .industry & {
+      content: "News » Industry"; // :(
+    }
+
+    .events & {
+      content: "Events"; // :(
+    }    
+
+    .meetups & {
+      content: "Meetups"; // :(
+    }    
+
+    .pastmeetups & {
+      content: "Past Meetups"; // :(
+    }
+
+    .webclerks & {
+      content: "webclerks"; // :(
+    }  
+
+    .contact & {
+      content: "contact"; // :(
+    }
+
+    @include mq($until: large) {
+      @include when-inside('html:not(.mobile-card)') {
+        content: "";
+      }
+
+      @include when-inside('.mobile-list') {
+        content: "";
+      }
+    }
+  }
+
+  &__cards {
+   @include mq($until: huge, $and: '(orientation: landscape) and (max-height: 640px)') {
+      max-height: 655px;
+    }
+
+    @include mq($from: 570px, $until: large, $and: '(orientation: landscape) and (max-height: 500px)') {
+      max-width: 90%;
+    }
+
+    @include mq($until: large, $and: '(orientation: landscape) and (max-height: 500px)') {
+      width: 90%;
+    }
+ 
+    @include mq($from: larger) {
+      max-width: 490px;
+    }
+
+    @include mq($from: wide) {
+      max-width: 620px;
+      max-height: 785px;
+    }
+
+    // &__inner--list {
+    //   @include mq($from: large) {
+    //     box-shadow: $cardShadow $brand-color-green-shadow;
+    //   }
+    // }
+  }
+
+  &__card {
+
+    // The headline is relativly positioned
+    // Make up for the lost space by moving the card up
+    @media screen and (min-height: 569px) {
+      // &:not(&--no-headline):not(&--list) {
+      &:not(&--no-headline) {
+        top: $cardHeadlineHeight * -1;
+      }
+    }
+
+    // No JS -> No image -> No need to reposition the headline
+    @include when-nojs {
+      top: 0 !important;
+    }
+
+    &--card {
+      box-shadow: $cardShadow $brand-color-green-shadow;
+
+      @include mq($until: large) {
+        @include when-inside('html:not(.mobile-card)') {
+          box-shadow: none;
+        }
+      }
+    }
+
+    // The headline is relativly positioned
+    // Make up for the lost space by moving the card up
+    @media screen and (min-height: 569px) {
+      &:not(&--no-headline) {
+      // &:not(&--no-headline):not(&--list) {
+
+        @include mq($from: large) {
+          top: $cardHeadlineHeightLarge * -1;
+        }
+      }
+    }
+  }
+
+  &__hl {
+    @include semibold;
+
+    &:before {
+      content: '» ';
+      display: inline-block;
+      margin-right: 0.4rem;
+    }
+
+    // &--list:before {
+    //   display: none;
+    // }
+
+    // If there's an image
+    // &:not(&--list) {
+      @include when-inside('html') {
+        @media screen and (min-height: 569px) {
+          display: flex;
+          top: $cardImageHeight;
+
+          @include mq($from: large) {
+            top: $cardImageHeightLarge;
+            height: $cardHeadlineHeightLarge;
+            font-size: 1.5rem;
+            padding: $cardPaddingLarge;
+          }
+
+          @include mq($from: wide) {
+            top: $cardImageHeightWide;
+            font-size: 1.8rem;
+            padding: $cardPaddingLarge $cardPaddingWide;
+          }
+        }
+      }
+    // }
+  }
+
+  &__imgct {
+    background-color: $secondary-lighter;
+
+    height: $cardImageHeight;
+    overflow: hidden;
+
+    // Center images
+    @include when-inside('html:not(.no-card)') {
+
+      border-top-left-radius: inherit;
+      border-top-right-radius: inherit;
+    }
+
+    display: none;
+
+    @include when-inside('.no-card') {
+      @include mq($until: large) {
+        display: flex;
+        border-radius: 5px;
+      }
+
+      @include mq($from: large) {
+        border-top-left-radius: inherit;
+        border-top-right-radius: inherit;
+      }
+    }
+
+    justify-content: center;
+    align-items: center;
+
+    &--webclerks {
+      opacity: 0.1;
+
+      img {
+        max-height: 6rem;
+      }
+    }
+
+    @include mq($from: large) {
+      height: $cardImageHeightLarge;
+    }
+
+    img {
+      max-width: 1000px;
+
+      @include mq($from: small) {
+        max-width: 100%;
+      }
+    }
+
+    &--fullheight {
+      img {
+        height: auto;
+        max-height: 200%;
+        max-width: 100%;
+
+        @include mq($until: large) {
+          max-width: 100%;
+        }
+      }
+    }
+
+    @media screen and (min-height: 569px) {
+      // @include when-inside('html:not(.no-card)') {
+        display: flex;
+      // }
+    }
+
+   @include mq($from: wide) {
+      height: $cardImageHeightWide;
+    }    
+
+    @include mq($from: 570px, $until: large, $and: '(orientation: landscape) and (max-height: 500px)') {
+      display: flex;
+      float: left;
+      width: 160px;
+      height: 100%;
+      margin-right: 1rem;
+      border-radius: $cardBorderRadius;
+    }
+  }
+
+  &__ct {
+    // &:not(&--list) {
+    @media screen and (min-height: 569px) {
+      margin-top: $cardHeadlineHeight;
+      height: calc(100% - #{$cardImageHeight} - #{$cardHeadlineHeight} - 1rem);
+
+      @include mq($from: large) {
+        margin-top: $cardHeadlineHeightLarge;
+        height: calc(100% - #{$cardImageHeightLarge} - #{$cardHeadlineHeightLarge} - 1rem);
+        padding: 0 $cardPaddingLarge $cardPaddingLarge;
+      }
+
+      @include when-inside('.ft__card--no-headline') {
+        margin-top: 0;
+
+        height: calc(100% - #{$cardImageHeight} - 1rem);
+
+        @include mq($from: large) {
+          height: calc(100% - #{$cardImageHeightLarge} - 1rem);
+          padding: $cardPaddingLarge;
+        }
+
+        @include mq($from: wide) {
+          margin-top: $cardHeadlineHeightLarge;
+          height: calc(100% - #{$cardImageHeightWide} - #{$cardHeadlineHeightLarge} - 1rem);
+          padding: 0 $cardPaddingWide $cardPaddingWide;
+        }
+      }
+    }
+
+    &__hl {
+      @include mq($from: wide) {
+        top: $cardImageHeightWide;
+        font-size: 2.8rem;
+      }
+
+      // &--list {
+      //   @include hl-bullet($brand-color-pink);
+      // }
+
+      &__l {
+        display: block;
+        overflow: hidden;
+      }
+    }
+
+    &__date {
+      padding-left: 2rem;
+      font-size: 1.3rem;
+      display: block;
+      line-height: 1.3;
+    }
+  }
+
+  &__img {
+    @include mq($from: 570px, $until: large, $and: '(orientation: landscape) and (max-height: 500px)') {
+      transform: rotate(90deg);
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    bottom: -0.7rem;
+    right: -0.7rem;
+    box-shadow: 1.9rem 1.9rem 0 $brand-color-green-shadow;
+
+    width: $btnSmall;
+    height: $btnSmall;
+
+    @include mq($from: large) {
+      width: 7rem;
+      height: 7rem;
+    }
+  }
+}

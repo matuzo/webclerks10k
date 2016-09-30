@@ -1,0 +1,36 @@
+.page {
+  height: 100%;
+  font-size: 16px;
+  font-size: 1.5rem;
+
+  padding-top: $headerHeightSmall;
+
+  margin: 30px;
+
+  @media only screen {
+    margin: 0;
+  }
+
+  @include mq($from: large) {
+    padding-top: 0;
+  }
+  
+  @include when-inside('.tabs') {
+    padding-top: $headerHeightSmall + 4.6rem;
+    
+    @include mq($from: large) {
+      padding-top: 0;
+    }
+
+  }
+
+  .no-svg & {
+    padding-top: 0;
+  }
+  
+  @include when-inside('.mobile-card') {
+    @include mq($until: large) {
+      padding-top: $headerHeightSmall;
+    }
+  }
+}

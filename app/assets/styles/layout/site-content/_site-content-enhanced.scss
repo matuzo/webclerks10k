@@ -1,0 +1,38 @@
+.site__ct__main {
+  @include mq($from: larger) {
+    box-shadow: $mainBoxShadow $brand-color-green-shadow;
+  }
+
+  @include when-inside('.tabs:not(.meetups)') {
+
+    @include mq($from: large) {
+      padding: $contentPadding $contentPadding (6rem + $contentPadding);
+      margin-top: $tabsHeightLarge;
+      height: calc(100% - #{$tabsHeightLarge});
+    }
+
+    @include mq($from: larger) {
+      padding: $tabPaddingLarger $tabPaddingLarger (6rem + $tabPaddingLarger);
+      margin-top: $tabsHeightLarger;
+      height: calc(100% - #{$tabsHeightLarger});
+    }
+
+    @include mq($from: wide) {
+      padding: $contentPaddingWide $contentPaddingWide (6rem + $contentPaddingWide);
+    }
+  }
+
+  @include mq($from: larger) {
+    padding: $contentPaddingLarger $contentPaddingLarger $contentPaddingLarger;
+  }
+
+  @include mq($from: wide) {
+    padding: $contentPaddingWide $contentPaddingWide $contentPaddingWide;
+  }
+
+  @include when-nojs {
+    height: auto;
+    margin-top: 0;
+    padding-bottom: $navHeight + $contentPadding;
+  }
+}

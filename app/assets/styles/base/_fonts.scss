@@ -1,0 +1,11 @@
+@mixin semibold {
+  font-family: $text-font-stack-semibold;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin extrabold {
+  font-family: $text-font-stack-extrabold;
+  font-weight: normal;  
+  font-style: normal;  
+}

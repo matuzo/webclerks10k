@@ -1,0 +1,35 @@
+.nav__main {
+  @include mq($from: larger) {
+    @include when-nojs {    
+      top: 3rem;
+      left: 6.4rem;
+      font-size: 2rem;
+    }
+  }
+
+  &__item {
+    padding-top: 0;
+  }
+
+  &__link {
+    padding: 0.7rem 0 0;
+    display: block;
+    height: 100%;
+    width: 100%; 
+    line-height: 1;
+  }
+
+  &__text--active {
+    padding-bottom: 0.3rem;
+    border-bottom: 2px solid $brand-color-pink;
+  }
+
+  &__icon {
+    display: block;
+    margin: 0 auto 0.3rem;
+   
+    @include mq($from: large) {
+      display: none !important;
+    }
+  }
+}

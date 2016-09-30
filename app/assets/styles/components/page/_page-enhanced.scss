@@ -1,0 +1,8 @@
+.page {
+      // transform: translateX($headerWidthWide) !important;
+  @include mq($from: wide) {
+    &--navvisible {
+      transform: translateX($headerWidthWide);
+    }
+  }  
+}

@@ -1,0 +1,72 @@
+.cal {
+  max-width: 50rem;
+  margin: 0 auto;
+
+  &__change {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  &__change-month {
+    &__icon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__week {
+    text-align: left;
+    display: block;
+    font-size: 0;
+    margin: 1.6rem 0;
+
+    &--0 {
+      text-align: right;
+    }
+  }
+
+  &__day {
+    display: inline-block;
+    width: 14.285714286%;
+    font-size: 16px;
+    text-align: center;
+
+    .no-svg & {
+      width: 14%;
+      margin-right: -1px;
+    }
+  }
+
+  &__nr {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    border-radius: 50%;
+    position: relative;
+    font-size: 1.4rem;
+
+    &--a:visited,
+    &--a:link {
+      color: #fff;
+      background: $secondary-gray-lighter;
+    }
+  }
+
+  &__wk {
+    &__events {
+      display: block;
+      font-size: 1.4rem;
+      padding: 1.6rem 5.8%;
+      text-align: left;
+    }
+  }
+
+  &__event {
+    display: block;
+  }
+}

@@ -1,0 +1,276 @@
+.ft {
+  // Mobile Default Background
+  background: $content-background;
+  // No Background if on a card page
+  @include when-inside('.mobile-card:not(.mobile-list)') {
+    @include mq($until: large) {
+      background: none;
+    }
+  }
+
+  // No background for 2col display
+  @include mq($from: large) {
+    background: none;
+  }
+
+  &__cards {
+    $spaceAroundCard: 2.8rem;
+
+    @media only screen {
+      width: 100%;
+    }
+    max-width: 39rem;
+
+    @include when-inside('.no-card') {
+      @include mq($until: large) {
+        max-width: 100%;
+      }
+    }
+
+    height: 100%;
+
+    padding: 28px 28px 0;
+
+    @media only screen {
+      padding: 0 $spaceAroundCard $spaceAroundCard;
+    }
+
+    @include mq($until: large) {
+      @include when-inside('html:not(.mobile-card)') {
+        padding: 0;
+      }
+    }
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    @include mq($from: large) {
+      max-width: 430px;
+      max-height: 600px;
+    }
+
+    // &--list {
+    //   @include mq($until: large) {
+    //     padding: $contentPadding;
+    //     max-width: 100%;
+    //     overflow: auto;
+    //   }
+    // }
+
+    &__inner {
+
+      height: 100%;
+      border-radius: $cardBorderRadius;
+      // overflow: hidden;
+      width: 100%;
+
+      // &--list {
+      //   // Reset the width for large screens (set in PHP)
+      //   width: 100% !important;
+      //   background: $content-background;
+      //   height: auto;
+      //   overflow: auto;
+
+      //   @include mq($from: large) {
+      //     padding: $cardPaddingLarge;
+      //   }
+      // }
+    }
+  }
+
+  &__card {
+    background: $content-background;
+
+    // &:not(&--list) {
+      border-radius: inherit;
+    // }
+
+    position: relative;
+    height: 100%;
+
+    // &--list {
+    //   height: auto;
+    //   margin-bottom: 1.4rem;
+    // }
+
+    @include when-inside('.no-card') {
+      @include mq($until: large) {
+        top: 0 !important;
+        padding: $contentPadding;
+      }
+    }
+  }
+
+  &__hl {
+    background: $content-background;
+    position: relative;
+    z-index: 1000;
+
+    height: $cardHeadlineHeight;
+    margin: 0 0 20px;
+    margin-bottom: 0rem;
+    padding: $cardPadding $cardPadding 0;
+    color: $brand-color-pink;
+
+    display: none;
+    
+    .no-card {
+      display: flex;
+    }
+
+    &:first-child {
+      border-top-left-radius: inherit;
+      border-top-right-radius: inherit;
+    }
+
+    font-size: 1.3rem;
+    line-height: 1.6;
+
+
+    // If there's an image
+    // &:not(&--list) {
+      // @media screen and (min-height: 569px) {
+      //   @include when-inside('html') {
+
+      //   }
+
+      // }
+    // }
+
+    // &--list {
+    //   display: block !important;
+    //   display: flex !important;
+    //   padding-left: 0;
+    //   padding-right: 0;
+    //   @include semibold;
+    //   font-size: 1.6rem;
+    //   border-bottom: 1px solid $secondary-light;
+    //   padding-bottom: 1rem;
+    //   height: auto;
+    //   margin-bottom: 1.8rem;
+
+    //   &:before {
+    //     display: none;
+    //   }
+    // }
+
+    @include when-inside('.no-card') {
+      @include mq($until: large) {
+        @include main-content-hl;
+        display: block;
+        height: auto;
+        padding: $contentPadding $contentPadding 0;
+        top: 0 !important;
+
+        &:before {
+          display: none;
+        }
+      }
+    }
+
+    // No JS -> No image -> No need to reposition the headline
+    @include when-nojs {
+      top: 0;
+    }
+  }
+
+  &__ct {
+    height: 100%;
+    color: $secondary-gray-lighter;
+    overflow: auto;
+
+    // max-width: 600px;
+
+    // &--list {
+    //   height: auto !important;
+    //   padding: 0;
+    //   margin-top: 0;
+    // }
+
+    // &:not(&--list) {
+      padding: $cardPadding;
+
+      @include when-inside('.no-card') {
+        @include mq($until: large) {
+          padding: $contentPadding 0;
+          height: auto;
+          margin-top: 0;
+        }
+      }
+    // }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    &__hl {
+      margin: 0;
+      margin-bottom: 2rem;
+
+      font-size: 2.2rem;
+      line-height: 1.2;
+      text-transform: uppercase;
+      color: $secondary-dark;
+      text-overflow: ellipsis;
+      overflow: hidden;
+
+      a:link, a:visited {
+        color: $secondary-dark;
+        text-decoration: none;
+      }
+
+      @include extrabold;
+
+      // &--list {
+      //   margin-bottom: 0;
+      //   text-transform: none;
+      //   font-weight: 400;
+      //   font-size: 1.5rem;
+      // }
+    }
+  }
+
+  &__btn {
+    
+    justify-content: center;
+    align-items: center;
+    display: none;
+    background: $brand-color-pink;
+
+
+    &:hover {
+      background: $brand-color-green;
+    }
+
+    @include mq($from: large) {
+      bottom: -0.9rem;
+      right: -0.9rem;
+    }
+
+    @media only all {
+      display: block;
+      display: flex;
+    }
+
+    &__icon {
+      width: 90%;
+      height: 90%;
+    }
+
+    &--close {
+      @include mq($from: large) {
+        display: none;
+      }
+    }
+
+    @include when-inside('.no-card') {
+      @include mq($until: large) {
+        display: none;
+      }
+    }
+    // @include when-inside('.ft__ct--list') {
+    //   display: none;
+    // }
+  }
+}

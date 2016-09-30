@@ -1,0 +1,9 @@
+.image-list {
+  @include list-reset;
+
+  @include when-nojs {
+    span {
+      @include visually-visible;
+    }
+  }
+}

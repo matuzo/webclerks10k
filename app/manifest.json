@@ -1,0 +1,20 @@
+{
+  "name": "webclerks",
+  "short_name": "webclerks",
+  "description": "Österreichs Webdesign & Webdevelopment Community",
+  "icons": [
+    {
+      "src": "\/assets\/images\/icons\/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image\/png"
+    },
+    {
+      "src": "\/assets\/images\/icons\/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image\/png"
+    }
+  ],
+  "theme_color" : "#ff566c",
+  "start_url" : "/",
+  "display" : "browser"
+}

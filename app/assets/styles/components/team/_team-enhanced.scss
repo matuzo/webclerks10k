@@ -1,0 +1,21 @@
+.team {
+  @include mq($from: large) {
+    &__lbl {
+      @include visually-hidden;
+    }
+
+    width: 50%;
+    position: fixed;
+    left: 0;
+    z-index: 5000;
+    bottom: ($cardInfoSpace) - 2.6rem;
+  }
+
+  @include mq($from: larger) {
+    bottom: ($cardInfoSpace) - 2.3rem;
+  }
+
+  @include mq($from: xlarge) {
+      bottom: $cardInfoSpaceBig - 4rem;
+  }
+}

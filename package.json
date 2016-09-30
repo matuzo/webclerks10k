@@ -1,0 +1,56 @@
+{
+  "name": "webclerks10kapart",
+  "version": "1.0.0",
+  "description": "Repo für unsere 10k Apart Einreichung",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matuzo/webclerks10kApart.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matuzo/webclerks10kApart/issues"
+  },
+  "homepage": "https://github.com/matuzo/webclerks10kApart#readme",
+  "devDependencies": {
+    "babel-loader": "^6.2.5",
+    "babel-plugin-transform-object-assign": "^6.8.0",
+    "babel-preset-es2015": "^6.13.2",
+    "browser-sync": "^2.14.0",
+    "eslint": "^3.4.0",
+    "eslint-config-airbnb-base": "^5.0.3",
+    "eslint-loader": "^1.5.0",
+    "eslint-plugin-import": "^1.14.0",
+    "gulp": "^3.9.1",
+    "gulp-changed": "^1.3.2",
+    "gulp-chmod": "^1.3.0",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-group-css-media-queries": "^1.1.0",
+    "gulp-htmlmin": "^2.0.0",
+    "gulp-inject": "^4.1.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-rev": "^7.1.2",
+    "gulp-rev-css-url": "^0.1.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-svg-sprite": "^1.3.6",
+    "gulp-uglify": "^2.0.0",
+    "gulp-uncss": "^1.0.6",
+    "gulp-usemin": "^0.3.23",
+    "gulp-webp": "^2.3.0",
+    "gulp-webpack": "^1.5.0",
+    "require-dir": "^0.3.0",
+    "run-sequence": "^1.2.2"
+  },
+  "dependencies": {
+    "es6-promise": "^3.3.1",
+    "fontfaceobserver": "^2.0.4"
+  }
+}

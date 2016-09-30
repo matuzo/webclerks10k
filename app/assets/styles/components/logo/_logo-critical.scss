@@ -1,0 +1,36 @@
+.logo { 
+  width: $headerLogoWidthSmall;
+  height: $headerLogoHeightSmall;
+  display: block;
+
+  fill: rgb(255,255,255);
+
+  &--clone {
+    display: none;
+  }
+
+  @include mq($from: large) {
+    position: absolute;
+
+    left: 3rem;
+    bottom: 3rem;
+
+    @include when-nojs {
+      left: 2rem;
+      bottom: 2rem;
+    }
+
+    width: $headerLogoWidth;
+    height: $headerLogoHeight;
+
+    &--clone {
+      display: block;
+      fill: rgb(255,255,255);
+      left: 3rem;
+      top: auto;
+      bottom: ($cardInfoSpace * -1) + 0.3rem;
+    }
+  }
+}
+
+

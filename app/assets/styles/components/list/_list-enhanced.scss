@@ -1,0 +1,13 @@
+.list {
+  @include list-reset;
+  margin: 1rem 0;
+
+  &__it {
+    @include hl-bullet($brand-color-pink);
+  }
+
+  &__txt {
+    display: block;
+    overflow: hidden;
+  }
+}

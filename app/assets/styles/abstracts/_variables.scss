@@ -1,0 +1,152 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+/// Site variables
+// Paddings, dimensions, shadows
+$headerPadding: 1rem;
+$headerBorder: 1rem;
+
+$headerLogoWidthSmall: 4rem / 1.4;
+$headerLogoHeightSmall: 4rem / 1.4;
+$headerHeightSmall: $headerLogoHeightSmall + ($headerPadding * 2);
+
+$headerLogoWidth: 4rem;
+$headerLogoHeight: 4rem;
+
+$headerWidth: 30rem;
+$headerWidthWide: 36rem;
+
+$headerHeightSmall: $headerLogoHeightSmall + ($headerPadding * 2);
+$headerHeight: $headerLogoHeight + ($headerPadding * 2) + ($headerBorder * 2);
+$navHeight: 5rem;
+
+$contentPadding: 1.5rem;
+$contentPaddingLarge: 3rem;
+$contentPaddingLarger: 5.6rem;
+$contentPaddingWide: 5.6rem;
+
+$tabsHeight: 40px;
+$tabsHeightLarge: 50px;
+$tabsHeightLarger: 65px;
+
+$tabsBoxShadow: inset 0px -3px 0;
+$tabBoxShadow: 4px -3px 0;
+$tabPaddingLarger: 2rem;
+
+$mainBoxShadow: -15px 0px 0px;
+
+
+/// Variables for the featured cards
+// Paddings, dimensions, shadows
+
+$cardInfoSpace: 4rem;
+$cardInfoSpaceBig: 6.5rem;
+$cardBorderRadius: 1rem;
+
+$cardHeadlineHeight: 5.2rem;
+$cardHeadlineHeightLarge: 8rem;
+
+$cardImageHeight: 15.5rem;
+$cardImageHeightLarge: 23rem;
+$cardImageHeightWide: 28rem;
+
+$cardPadding: 2rem;
+$cardPaddingLarge: 3rem;
+$cardPaddingWide: 4rem;
+
+$cardInfoPosition: ($cardInfoSpace * -1) + 1rem;
+$cardShadow: 1.9rem 1.9rem 0;
+
+/// Variables for articles
+$imageContainerWidth: 60px;
+$imageContainerHeight: 60px;  
+$imageContainerWidthLarge: 66px;
+$imageContainerHeightLarge: 66px;
+
+/// Buttons
+$btnSmall: 4.6rem;
+
+/// fontfamilies
+$text-font-stack-basic: 'Helvetica', sans-serif !default;
+$text-font-stack: 'open_sansregular', 'Helvetica', sans-serif !default;
+$text-font-stack-semibold: 'open_sanssemibold', 'Helvetica', sans-serif !default;
+$text-font-stack-extrabold: 'open_sansextrabold', 'Helvetica', sans-serif !default;
+
+
+/// Colors
+// Secondary color
+$secondary-dark: rgb(23, 36, 45) !default;
+
+// Secondary color light
+$secondary-light: rgb(238, 242, 242) !default;
+$secondary-lighter: rgb(247, 249, 249) !default;
+$secondary-darker: rgb(135, 143, 148) !default;
+
+$secondary-gray: rgb(62, 69, 74) !default;
+$secondary-gray-lighter: #6a747a !default;
+
+// Content Background
+$content-background: rgb(255, 255, 255) !default;
+
+// Brand Color Pink
+$brand-color-pink: rgb(255, 86, 107) !default;
+$brand-color-pink-dark: #D93A5A !default; // #de314f
+$brand-color-pink-shadow: #e75165 !default;
+
+// Brand Color Orange
+$brand-color-orange: rgb(255, 168, 37) !default;
+$brand-color-orange-dark: #a66900 !default;
+$brand-color-orange-shadow: rgb(230, 148, 24) !default;
+
+// Brand Color Green
+$brand-color-green: rgb(49, 192, 186) !default;
+$brand-color-green-dark: #008580 !default;
+$brand-color-green-shadow: rgb(46, 177, 172) !default;
+
+
+/// Responsiveness
+
+// Container's maximum width
+// @type Length
+$max-width: 1180px !default;
+
+// To enable support for browsers that do not support @media queries,
+// (IE <= 8, Firefox <= 3, Opera <= 9) set $mq-responsive to false
+// Create a separate stylesheet served exclusively to these browsers,
+// meaning @media queries will be rasterized, relying on the cascade itself
+$mq-responsive: true;
+
+// Name your breakpoints in a way that creates a ubiquitous language
+// across team members. It will improve communication between
+// stakeholders, designers, developers, and testers.
+$mq-breakpoints: (
+    mobile:  320px,
+    small:  480px,
+    medium:  740px,
+    large: 768px,
+    larger: 1025px,
+    xlarge:    1300px,
+    wide:    1500px,
+    huge:    20000px,
+
+    // Tweakpoints
+    desktopAd: 810px,
+    mobileLandscape: 480px
+);
+
+// Define the breakpoint from the $mq-breakpoints list that should
+// be used as the target width when outputting a static stylesheet
+// (i.e. when $mq-responsive is set to 'false').
+$mq-static-breakpoint: large;
+
+// If you want to display the currently active breakpoint in the top
+// right corner of your site during development, add the breakpoints
+// to this list, ordered by width, e.g. (mobile, tablet, desktop).
+// $mq-show-breakpoints: (mobile, mobileLandscape, medium, large, wide);
+
+// Relative or absolute URL where all assets are served from
+// @type String
+// @example scss - When using a CDN
+//   $base-url: 'http://cdn.example.com/assets/';
+$base-url: '/assets/' !default;

@@ -1,0 +1,19 @@
+.form {
+  &__legend {
+    @include visually-hidden;
+  }
+
+
+  &__input {
+    width: 80%;
+  }
+
+  &__paragraph {
+    position: relative;
+  }
+
+  &__btn {
+    background: $brand-color-pink;
+    color: #fff;
+  }
+}

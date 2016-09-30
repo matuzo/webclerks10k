@@ -1,0 +1,22 @@
+.image-list {
+  @include list-reset;
+  display: flex;
+  justify-content: space-between;
+  max-width: 300px;
+  margin: 0 auto;
+
+
+  &__it {
+    display: inline-block; 
+    flex-grow: 1;
+  }
+
+  &__a {
+    width: 5.6rem;
+    height: 5.6rem;
+    display: block;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+}

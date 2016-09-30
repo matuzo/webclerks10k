@@ -1,0 +1,37 @@
+.nav__views {
+  @include list-reset;
+  display: flex;
+
+  @include mq($from: large) {
+    &__it {
+      &:nth-child(2) {
+        display: none;
+      }
+    }
+  }
+
+  &__lk {
+    display: block;
+    margin-right: 1rem;
+
+    &:link,
+    &:visited {
+      color: $brand-color-pink-dark;
+      text-decoration: underline;
+    }
+
+    &:hover {
+      color: $secondary-dark;
+    }
+
+    @include mq($from: large) {
+      width: auto;
+      height: auto;
+      opacity: 1;
+    }
+
+    span {
+      // @include visually-visible;
+    }
+  }
+}

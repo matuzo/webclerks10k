@@ -1,0 +1,55 @@
+.nav__main {
+  z-index: 6300;
+
+  @include mq($from: large) {
+    background: none;
+    
+   @include when-js {    
+      font-size: 2.2rem;
+      display: flex;
+      align-items: center;
+      height: 100%;      
+
+      &__items {
+        height: auto;
+        overflow: visible;
+      }
+    }
+  }
+
+  &__item {
+    transition: opacity 0.3s linear; 
+    opacity: 0.6;
+    
+    &:hover,
+    &--active {
+      opacity: 1;
+    }
+
+    @include mq($from: large) {
+      margin: 0;
+
+      @include when-nojs {   
+        &:not(:last-child) {
+          margin-right: 0.5rem;
+          
+          @include mq($from: larger) {
+            margin-right: 1.6rem;
+          }
+        }
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 2.2rem;
+      }
+    }
+  }
+
+  &__link {
+    &:link,
+    &:visited,
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

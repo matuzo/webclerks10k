@@ -1,0 +1,75 @@
+.nav__arrow {
+  // display: none;
+  $arrowHeight: 3rem;
+  $arrowWidth: 3rem;  
+
+  $arrowHeightBig: 4rem;
+  $arrowWidthBig: 4rem;
+  
+  position: absolute;
+  right: 1rem;
+  bottom: $cardInfoPosition + 0.4rem;
+
+  width: $arrowWidth;
+  height: $arrowHeight;
+
+  &__icon {
+
+    &--ia {
+      opacity: 0.6;
+    }
+    path {
+      fill: #ffffff;
+    }
+  }
+
+  &--left {
+    right: $arrowWidth + 2rem;
+  }
+
+  &--right {
+
+  }
+
+  &--inactive {
+    opacity: 0.5;
+  }
+
+  @include mq($from: large) {
+    position: absolute;
+    top: 50%;
+    width: $arrowWidthBig;
+    height: $arrowHeightBig;
+    margin-top: ($arrowHeightBig / 2) * -1;
+    
+    &--left {
+      left: 1.5rem;
+      margin-left: ($arrowWidthBig / 2) * -1;
+    }
+
+    &--right {
+      right: 1.5rem;
+      margin-right: ($arrowWidthBig / 2) * -1;
+    }
+  }
+
+  @include mq($from: 920px) {
+    &--left {
+      left: 5%;
+    }
+
+    &--right {
+      right: 5%;
+    }
+  }  
+
+  @include mq($from: xlarge) {
+    &--left {
+      left: 10%;
+    }
+
+    &--right {
+      right: 10%;
+    }
+  }
+}

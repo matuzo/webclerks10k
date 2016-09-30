@@ -1,0 +1,46 @@
+.form {
+  &__fs {
+    border: none;
+    padding: 0;
+  }
+
+  &__item {
+    margin: 2rem 0 3rem 0;
+  }
+
+  &__label {
+    position: absolute;
+    font-weight: 900;
+    color: $secondary-dark;
+    padding-left: 1rem;
+  }
+
+  &__input {
+    border: none;
+    border-bottom: 2px solid $brand-color-pink;
+    padding-left: 8rem;
+    padding-bottom: 0.6rem;
+    margin-bottom: 1rem;
+    font-weight: 300;
+  }
+
+  
+  &__btn {
+    margin: 0 auto;
+    text-align: center;
+    width: 7rem;
+    height: 7rem;
+
+    @include mq($from: large) {
+      position: absolute;
+      bottom: -0.7rem;
+      right: -0.7rem;
+      box-shadow: 1.9rem 1.9rem 0px $brand-color-green-shadow;
+    }
+  }
+
+  &__hint {
+    opacity: .5;
+    font-style: italic;
+  }
+}

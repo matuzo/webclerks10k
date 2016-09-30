@@ -1,0 +1,11 @@
+.page {
+  @include mq($from: large) {
+    overflow:hidden;
+    will-change: transform;
+    transition: transform 0.3s ease-out;
+  
+    &--navvisible {
+      transform: translateX($headerWidth);
+    }
+  }
+}

@@ -1,0 +1,7 @@
+.main-content__hl {
+  @include visually-hidden;
+
+  &__subhl {
+    color: $secondary-dark;
+  }
+}

@@ -1,0 +1,95 @@
+.btn {
+  &__text {
+    @include visually-hidden;
+  }
+
+  @include mq($from: large) {
+    width: 7rem;
+    height: 7rem;
+    padding: 0;
+
+    &--mini {
+      width: 30px;
+      height: 30px;
+    }
+
+    &--small {
+      width: $btnSmall;
+      height: $btnSmall;
+      line-height: $btnSmall;
+    }
+
+    &__icon {
+      width: 50%;
+      height: 50%;
+    }
+  }
+
+
+  
+  &--mini {
+    width: 30px;
+    height: 30px;
+  }
+
+  &--round {
+    border-radius: 50%;
+  }
+
+  &--green {
+    background-color: $brand-color-green;
+  }
+
+  &__icon {
+    width: 50%;
+    height: 50%;
+    display: block;
+
+    &--small {
+      width: 100%;
+      height: 100%;
+      display: block;
+
+      svg {
+        display: block;
+        width: 20px;
+        margin-left: 5px;
+        margin-top: 2px;
+
+        @include mq($from: large) {
+          margin-left: 10px;
+        }
+
+        path {
+          fill: #fff;
+        }
+      }
+    }
+
+    svg {
+      height: 100%;
+      width: 100%;
+    }
+
+    path {
+      fill: #fff;
+    }
+  }
+
+  &--pink {
+    path {
+      fill: $brand-color-pink;
+    }
+  }
+
+    
+  &__toggle-offcanvas,
+  &__close-offcanvas {
+    display: none;
+    @include mq($from: large) {
+      display: block;
+      height: 44px;
+      width: 44px;
+    }
+  }
+}

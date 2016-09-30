@@ -1,0 +1,18 @@
+.nav__pagination {
+  background: $content-background;
+  text-align: center;
+  margin-top: 5rem;
+  
+  &__list {
+    @include list-reset;
+    overflow: hidden;
+    @include semibold;
+  }
+
+  &__item {
+    background: $content-background;
+    float: left;
+    width: 12.5%;
+    height: 12.5%;
+  }
+}

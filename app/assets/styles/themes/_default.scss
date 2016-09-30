@@ -1,0 +1,168 @@
+// -----------------------------------------------------------------------------
+// When having several themes, this file contains everything related to the
+// default one.
+// -----------------------------------------------------------------------------
+
+@mixin theme($brand-color, $brand-color-dark, $brand-color-shadow, $contrast, $textWithContrast) {
+  background-color: $brand-color; 
+
+  @include theme-header($brand-color);
+  @include theme-tabs($brand-color, $brand-color-dark, $brand-color-shadow, $textWithContrast);
+  @include theme-cards($brand-color, $brand-color-dark, $brand-color-shadow, $contrast);
+  @include theme-main($brand-color-shadow);
+  @include theme-breadcrumb($brand-color-shadow);
+}
+
+@mixin theme-main($brand-color-shadow) {
+  .site__ct__main {
+    @include mq($from: larger) {
+      box-shadow: $mainBoxShadow $brand-color-shadow;
+    }
+  }
+}
+
+@mixin theme-tabs($brand-color, $brand-color-dark, $brand-color-shadow, $textWithContrast) {
+  $activeTab: $content-background;
+  
+  .nav__tabs {
+    @include mq($until: large) {
+      box-shadow: $tabsBoxShadow $brand-color-shadow;
+      background-color: $brand-color; 
+    }
+
+    @include mq($from: larger) {
+      box-shadow: $mainBoxShadow $brand-color-shadow;
+    }
+
+    &__link {
+
+      &:focus {
+        @include mq($until: large) {
+          outline: 4px solid $secondary-dark;
+        }
+      }
+
+      // &:hover,
+      &--active:link,
+      &--active:visited {
+        background: $activeTab;
+        color: $secondary-dark;
+
+        .nav__tabs__text {
+          @include smart-underline($activeTab, $brand-color, $brand-color, 90%);
+        }
+
+        @include mq($until: large) {
+          box-shadow: $tabBoxShadow $brand-color-shadow;
+        }
+      }
+
+      &--active:focus {
+        box-shadow: $tabBoxShadow $brand-color-shadow;
+        
+        .nav__tabs__text {
+          @include smart-underline($content-background, $brand-color, $brand-color, 90%);
+        }
+
+        @include mq($from: large) {
+          // outline: none;
+          box-shadow: none;
+        }
+      }
+
+      // If Smartphone
+      @media (hover:on-demand) {
+        &:hover {
+          background-color: transparent;
+          color: $textWithContrast; 
+          box-shadow: none;
+        }
+    
+        &:focus,
+        &--active:link,
+        &--active:visited  {
+          background-color: $activeTab;
+          color: $secondary-dark;
+          box-shadow: $tabBoxShadow $brand-color-shadow;
+        }
+      }
+    }
+  }
+}
+
+@mixin theme-cards($brand-color, $brand-color-dark, $brand-color-shadow, $contrast) {
+  .ft__card--card {
+      box-shadow: $cardShadow $brand-color-shadow;
+  }
+
+  .ft__hl {
+    color: $brand-color-dark;
+  }
+
+  .ft__btn {
+    background-color: $contrast;
+    box-shadow: $cardShadow $brand-color-shadow;
+
+    &:hover {
+      background-color: $brand-color-dark;
+    }
+  }
+}
+
+@mixin theme-header($brand-color) {
+  .site__header {
+    @include mq($until: larger) {
+      background-color: $brand-color; 
+    }
+  }
+}
+
+@mixin theme-breadcrumb($brand-color-shadow) {
+  .site__ct__ft:after {
+    color: $brand-color-shadow;
+  }
+}
+
+.jobs {
+  @include theme($brand-color-pink, $brand-color-pink-dark, $brand-color-pink-shadow, $brand-color-green, #a80000);
+}    
+
+.industry {
+  @include theme($brand-color-orange, $brand-color-orange-dark, $brand-color-orange-shadow, $brand-color-pink, #8f5900);
+}  
+
+.projects {
+  @include theme($brand-color-green, $brand-color-green-dark, $brand-color-green-shadow, $brand-color-pink, #006763);
+}
+
+// @mixin theme-headline($brand-color) {
+//   .ft__hl {
+//     color: $brand-color;
+//   }
+// }
+
+// // .events--meetup {
+// //   @include theme-headline($brand-color-green-dark);
+// //   @include theme-cards($brand-color-green, $brand-color-green-dark, $brand-color-green-shadow, $brand-color-pink );
+// //   @include theme-breadcrumb('Projekte', $brand-color-green-shadow);
+
+// //   .site__header {
+// //     @include mq($until: large) {
+// //       background-color: $brand-color-green; 
+// //     }
+// //   }
+// // }
+
+// // .events--conference {
+// //   @include theme-headline($brand-color-pink-dark);
+// //   @include theme-cards($brand-color-pink, $brand-color-pink-dark, $brand-color-pink-shadow, $brand-color-pink );
+// //   @include theme-breadcrumb('Projekte', $brand-color-pink-shadow);
+
+// //   .mobile-card .site__header {
+// //     @include mq($until: large) {
+// //       background-color: $brand-color-pink; 
+// //     }
+// //   }
+// // }
+
+

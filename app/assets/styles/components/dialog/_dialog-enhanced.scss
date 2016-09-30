@@ -1,0 +1,28 @@
+.dialog {
+  position: relative;
+  
+  &__hl {
+    background-color: #eef1f3;
+    
+    padding: 1.4rem;
+    margin: 0;
+    
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+
+    font-size: 1.2rem;
+    color: $secondary-darker;
+  }
+
+  &__ct {
+    padding: 1.4rem;
+  }
+
+  &__button {
+    background-color: $brand-color-pink;
+
+    position: absolute;
+    top: -1.5rem;
+    right: -1.5rem;
+  }
+}

@@ -1,0 +1,8 @@
+.js .offcanvas {
+  @include mq($from: large) {
+    @include hide-in-sidebar;
+    &--visible {  
+      display: block;
+    }
+  }
+}

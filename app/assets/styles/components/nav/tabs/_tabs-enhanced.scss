@@ -1,0 +1,73 @@
+.nav__tabs {
+  @include mq($until: large) {
+    box-shadow: $tabsBoxShadow $brand-color-green-shadow;
+  }
+
+  @include mq($from: larger) {
+    box-shadow: $mainBoxShadow $brand-color-green-shadow;
+    font-size: 2rem;
+    padding-left: $tabPaddingLarger;
+    padding-top: 1.5rem;
+
+    @include when-nojs {
+      top: 2rem;
+    }
+  }
+
+  @include when-nojs {
+    box-shadow: none !important;
+  }
+
+  @include mq($from: wide) {
+    padding-left: $contentPaddingWide;
+  }
+
+  &__link {
+    @include rounded-top-corners(2px);
+    
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+
+    // &:hover,
+    &--active:link,
+    &--active:visited {
+      .nav__tabs__text {
+        @include smart-underline($content-background, $brand-color-pink, $brand-color-pink, 90%);
+      }
+
+      @include mq($until: large) {
+        box-shadow: $tabBoxShadow $brand-color-green-shadow;
+      }
+    }
+    @include mq($from: large) {
+      &--active:focus {
+        // border-style: solid;
+        // border-width: 0.4rem 0.4rem 0;
+        // outline: none;
+        // padding-top: 0.6rem;
+        // border: none;
+        text-decoration: none;
+      }
+
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+
+      // &--active:focus {
+      //   padding-left: 2.1rem;
+      //   padding-right: 2.1rem;
+      // }
+    }
+
+    @include mq($from: xlarge) {
+      padding-left: 5.8rem;
+      padding-right: 5.8rem;
+
+      // &--active:focus {
+      //   padding-left: 5.4rem;
+      //   padding-right: 5.4rem;
+      // }
+    }
+  }
+}

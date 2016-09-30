@@ -1,0 +1,20 @@
+.btn {
+  padding: 0.5rem;
+  // width: $btnSmall;
+  // height: $btnSmall;
+
+  &__toggle-offcanvas {
+    &:focus {
+      outline: 4px solid $secondary-dark;  
+    }
+
+    @include when-inside('.page--navvisible') {
+      display: none;
+    }
+  }
+
+  &__close-offcanvas {
+    display: block;
+    color: rgb(255, 255, 255);
+  }
+}

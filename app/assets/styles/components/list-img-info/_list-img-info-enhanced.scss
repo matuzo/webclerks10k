@@ -1,0 +1,46 @@
+.list-img-info__subhl{
+  display: inline-block;
+  @include extrabold;
+  @include smart-underline(#fff, red, red, 86%);
+  color: $secondary-gray;
+}
+
+.list-img-info {
+  
+  padding: 0;
+  color: $secondary-gray;
+  margin: 2rem 0;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    &__img img {
+      border-radius: 100%;
+      width: 90px;
+    }
+
+    &__talk {
+      line-height: 2rem;
+    }
+
+    &__des {
+      display: block;
+    }
+
+    .item__des__name {
+      display: block;
+      font-size: 1.4rem;
+      color: $secondary-gray-lighter;
+    }
+
+    .item__des__link {
+      display: block;
+      font-size: 1.3rem;
+      color: $brand-color-pink;
+    }
+
+  }
+
+}
