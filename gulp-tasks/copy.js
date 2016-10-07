@@ -9,6 +9,7 @@ const gulp = require('gulp'),
 
 gulp.task('copy-misc', function() {
   gulp.src(['app/.htaccess', 
+            'app/web.config', 
             'app/favicon.ico', 
             'app/sw.js', 
             'app/browserconfig.xml',
